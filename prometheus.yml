@@ -20,6 +20,7 @@ scrape_configs:
     # scrape_interval: 200s
 
   - job_name: "api"
+    scheme: https
     static_configs:
       - targets: ["api-prometheusexporter-production.up.railway.app"]
 
