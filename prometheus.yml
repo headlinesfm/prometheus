@@ -1,5 +1,9 @@
+# ref:
+# - https://github.com/railwayapp/station-prometheus/blob/main/prometheus.yml
+# - https://autometrics.dev/blog/better-monitoring-insights-into-your-applications-running-on-railway
+
 global:
-  scrape_interval: 200s # By default, scrape targets every 15 seconds.
+  scrape_interval: 3600s # By default, scrape targets every 15 seconds.
 
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
@@ -13,15 +17,11 @@ scrape_configs:
   - job_name: "prometheus"
 
     # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 200s
-
-    static_configs:
-      - targets: ["localhost:9090"]
+    # scrape_interval: 200s
 
   - job_name: "api"
-    scrape_interval: 200s
     static_configs:
-      - targets: ["api-v2.railway.internal"]
+      - targets: ["api-v2-production-fa5b.up.railway.app"]
 
   # - job_name: 'postgres'
   #   scrape_interval: 5s
