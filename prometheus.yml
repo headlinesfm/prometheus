@@ -21,7 +21,7 @@ scrape_configs:
 
   - job_name: "api"
     static_configs:
-      - targets: ["api-prometheusexplorer.railway.internal"]
+      - targets: ["api-prometheusexporter-production.up.railway.app"]
 
   # - job_name: 'postgres'
   #   scrape_interval: 5s
